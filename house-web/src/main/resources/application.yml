@@ -36,7 +36,7 @@ spring:
       auto_import: common/common.ftl as common
   mail:
     username: 859073143@qq.com
-    password: rceixzrgledlbdgd
+    password: rceghhggjhgdvhedlb
     host: smtp.qq.com
     properties:
       smtp:
