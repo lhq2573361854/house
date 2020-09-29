@@ -1,0 +1,59 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8080
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://47.107.249.42:3306/house?serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: root
+    druid:
+      filter: stat,wall,log4j
+      max-active: 20
+      initial-size: 5
+      min-idle: 5
+      max-wait: 5000
+      connection-properties: druid.stat.mergeSql=true,druid.stat.slowSqlMillis=5000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      min-evictable-idle-time-millis: 300000
+  freemarker:
+    charset: utf-8
+    content-type: text/html;Charset=UTF-8
+    expose-request-attributes: true
+    expose-session-attributes: true
+    suffix: .ftl
+    settings:
+      datetime_format: yyyy-Md-dd HH:mm:ss
+      default_encoding: UTF-8
+      auto_import: common/common.ftl as common
+  mail:
+    username: 859073143@qq.com
+    password: rceixzrgledlbdgd
+    host: smtp.qq.com
+    properties:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+          required: true
+      mail:
+        smtp:
+          ssl:
+            enable: true
+
+file:
+  path: D:/file/
+  prefix: localhost/images/
+domain:
+  name: localhost
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
