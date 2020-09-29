@@ -4,7 +4,7 @@ target/
 !**/src/test/**/target/
 mvnw
 mvnw.cmd
-.mvn/wrapper
+.mvn
 ### STS ###
 .apt_generated
 .classpath
